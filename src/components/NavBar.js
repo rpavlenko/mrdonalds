@@ -50,7 +50,7 @@ const Login = styled.button`
   outline: none;
   cursor: pointer;
   color: #fff;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   background: transparent;
 
   :hover {
@@ -67,7 +67,7 @@ export const NavBar = () => (
     </Logo>
     <Login>
       <ImgSign src={signImg} />
-      Войти
+      войти
     </Login>
   </NavBarStyled>
 );
