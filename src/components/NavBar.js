@@ -50,7 +50,6 @@ const Login = styled.button`
   outline: none;
   cursor: pointer;
   color: #fff;
-  // text-transform: uppercase;
   background: transparent;
 
   :hover {
