@@ -48,7 +48,8 @@ const Text = styled.p`
 export const ModalItem = ({ openItem, setOpenItem }) => {
 
   function closeModal(e) {
-    if (e.target.id = 'overlay') {
+    if (e.target.id === 'overlay') {
+      console.log(e.target.id)
       setOpenItem(null);
     }
   }
