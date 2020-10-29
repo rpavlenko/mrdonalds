@@ -6,6 +6,7 @@ import dbMenu from './DBMenu';
 
 const MenuStyled = styled.main`
   margin-top: 80px;
+  margin-left: 380px;
   background-color: #ccc;
 `;
 

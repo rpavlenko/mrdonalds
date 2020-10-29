@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { AddButton } from './AddButton';
+import { ButtonCheckout } from './ButtonCheckout';
 
 const Overlay = styled.div`
   position: fixed;
@@ -23,21 +23,20 @@ const Modal = styled.div`
 `;
 
 const Banner = styled.div`
-  margin-bottom: 20px;
   height: 200px;
   background-image: url(${({img}) => img});
   background-size: cover;
   background-position: center;
 `;
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.section`
   display: flex;
   justify-content: space-between;
-  margin-right: 57px;
-  margin-left: 37px;
+  padding: 30px;
+  height: calc(100% - 300px)
 `;
 
-const Text = styled.p`
+const Text = styled.div`
   font-family: Pacifico;
   font-style: normal;
   font-weight: normal;
@@ -62,9 +61,9 @@ export const ModalItem = ({ openItem, setOpenItem }) => {
         <Banner img={openItem.img} />
         <ContentWrapper>
           <Text>{openItem.name}</Text>
-          <Text>{openItem.price.toFixed(0)}₽</Text>
+          <Text>{openItem.price}₽</Text>
         </ContentWrapper>
-        <AddButton />
+        <ButtonCheckout>Добавить</ButtonCheckout>
       </Modal>
     </Overlay>
   )
