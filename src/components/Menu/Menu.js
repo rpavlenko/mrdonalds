@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { ListItem } from './ListItem';
 import { Banner } from './Banner';
-import dbMenu from './DBMenu';
+import dbMenu from '../DBMenu';
 
 const MenuStyled = styled.main`
   margin-top: 80px;
