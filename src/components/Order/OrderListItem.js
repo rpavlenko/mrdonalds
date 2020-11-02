@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import bucketImage from '../../image/bucket.svg';
+import { formatCurrency, totalPriceItems } from '../Functions/secondaryFunction';
 
 const ItemName = styled.span`
   flex-grow: 1;
-
 `;
 
 const ItemPrice = styled.span`
@@ -35,9 +35,8 @@ const BucketButton = styled.button`
 export const OrderListItem = ({ order }) => (
   <OrderItemStyled>
     <ItemName>{order.name}</ItemName>
-    <span>2</span>
-    <ItemPrice>{order.price.toLocaleString('ru-RU',
-      { style: 'currency', currency: 'RUB' })}</ItemPrice>
+    <span>{order.count}</span>
+    <ItemPrice>{formatCurrency(totalPriceItems(order))}</ItemPrice>
     <BucketButton />
   </OrderItemStyled>
 );

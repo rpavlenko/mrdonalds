@@ -4,6 +4,8 @@ import styled from 'styled-components';
 export const ButtonCheckout = styled.button`
   display: block;
   margin: auto;
+  margin-top: 0px;
+  margin-bottom: 40px;
   padding: 20px 80px;
   background-color: #299B01;
   font-style: normal;
