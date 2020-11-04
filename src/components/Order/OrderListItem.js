@@ -42,8 +42,7 @@ const Topping = styled.div`
   color: #9A9A9A;
 `;
 
-export const OrderListItem = ({ order }) => {
-  // const addTopping = order => order.topping.map(item => { if (item.checked) return item.name + ' ' });
+export const OrderListItem = ({ order, deleteItem }) => {
   const topping = order.topping.filter(item => item.checked)
     .map(item => item.name)
     .join(', ');
@@ -51,10 +50,10 @@ export const OrderListItem = ({ order }) => {
   return (
     <>
   <OrderItemStyled>
-    <ItemName>{order.name}</ItemName>
+    <ItemName>{order.name} {order.choice}</ItemName>
     <span>{order.count}</span>
     <ItemPrice>{formatCurrency(totalPriceItems(order))}</ItemPrice>
-    <BucketButton />
+    <BucketButton onClick={deleteItem}/>
   </OrderItemStyled>
   {topping && <Topping>Допы: {topping}</Topping>}
   </>
