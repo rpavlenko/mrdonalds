@@ -16,6 +16,7 @@ const ItemPrice = styled.span`
 
 const OrderItemStyled = styled.li`
   display: flex;
+  flex-wrap: wrap;
   margin: 15px 0;
   margin-bottom: px;
 `;
@@ -33,15 +34,19 @@ const BucketButton = styled.button`
   cursor-pointer;
 `;
 
-const Topping = styled.p`
-  display: block;
+const Topping = styled.div`
   padding-left: 10px;
   margin-top: 0px;
+  width: 100%;
   font-size: 14px;
+  color: #9A9A9A;
 `;
 
 export const OrderListItem = ({ order }) => {
-  const addTopping = order => order.topping.map(item => { if (item.checked) return item.name + ' ' });
+  // const addTopping = order => order.topping.map(item => { if (item.checked) return item.name + ' ' });
+  const topping = order.topping.filter(item => item.checked)
+    .map(item => item.name)
+    .join(', ');
 
   return (
     <>
@@ -51,7 +56,7 @@ export const OrderListItem = ({ order }) => {
     <ItemPrice>{formatCurrency(totalPriceItems(order))}</ItemPrice>
     <BucketButton />
   </OrderItemStyled>
-  <Topping>{addTopping(order)}</Topping>
+  {topping && <Topping>Допы: {topping}</Topping>}
   </>
 )};
 
