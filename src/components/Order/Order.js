@@ -57,8 +57,15 @@ export const Order = ({ orders, setOrders }) => {
   totalPriceItems(order) + result
   , 0);
 
-  const deleteItem = () => {
-    console.log('delete');
+  const deleteItem = (index) => {
+    // const newOrders = [...orders];
+    // newOrders.splice(index, 1);
+
+    //using filter
+    const newOrders = orders.filter((item, i) => 
+      index !== i);
+    console.log(index);
+    setOrders(newOrders);
   }
 
   const totalItems = orders.reduce((result, order) => order.count + result, 0);
@@ -69,7 +76,12 @@ export const Order = ({ orders, setOrders }) => {
       <OrderContent>
         { orders.length ? 
           <OrderList>
-            {orders.map(order => <OrderListItem order={order} deleteItem={deleteItem}/>)}
+            {orders.map((order, index) => <OrderListItem 
+              key={index}
+              order={order}
+              deleteItem={deleteItem}
+              index={index}  
+            />)}
           </OrderList> :
           <EmptyList>Список заказов пуст</EmptyList> }
       </OrderContent>

@@ -42,7 +42,7 @@ const Topping = styled.div`
   color: #9A9A9A;
 `;
 
-export const OrderListItem = ({ order, deleteItem }) => {
+export const OrderListItem = ({ order, index, deleteItem }) => {
   const topping = order.topping.filter(item => item.checked)
     .map(item => item.name)
     .join(', ');
@@ -53,7 +53,7 @@ export const OrderListItem = ({ order, deleteItem }) => {
     <ItemName>{order.name} {order.choice}</ItemName>
     <span>{order.count}</span>
     <ItemPrice>{formatCurrency(totalPriceItems(order))}</ItemPrice>
-    <BucketButton onClick={deleteItem}/>
+    <BucketButton onClick={() => deleteItem(index)}/>
   </OrderItemStyled>
   {topping && <Topping>Допы: {topping}</Topping>}
   </>
