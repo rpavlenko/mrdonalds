@@ -51,7 +51,7 @@ const EmptyList = styled.p`
 `;
 
 
-export const Order = ({ orders, setOrders }) => {
+export const Order = ({ orders, setOrders, setOpenItem }) => {
 
   const total = orders.reduce((result, order) => 
   totalPriceItems(order) + result
@@ -64,7 +64,6 @@ export const Order = ({ orders, setOrders }) => {
     //using filter
     const newOrders = orders.filter((item, i) => 
       index !== i);
-    console.log(index);
     setOrders(newOrders);
   }
 
@@ -80,7 +79,8 @@ export const Order = ({ orders, setOrders }) => {
               key={index}
               order={order}
               deleteItem={deleteItem}
-              index={index}  
+              index={index}
+              setOpenItem={setOpenItem}  
             />)}
           </OrderList> :
           <EmptyList>Список заказов пуст</EmptyList> }
