@@ -11,6 +11,7 @@ import { Order } from './components/Order/Order';
 import { useOpenItem } from './components/Hooks/useOpenItem';
 import { useOrders } from './components/Hooks/useOrders';
 import { useAuth } from './components/Hooks/useAuth';
+import { useTitle } from './components/Hooks/useTitle';
 
 const firebaseConfig = {
   apiKey: "AIzaSyD2bhEhu2P3QfhlZEdNFUzAQWNGqtyps6A",
@@ -29,6 +30,7 @@ function App() {
   const auth = useAuth(firebase.auth);
   const openItem = useOpenItem();
   const orders = useOrders();
+  useTitle(openItem.openItem)
 
   return (
     <>
