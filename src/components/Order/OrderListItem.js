@@ -43,6 +43,15 @@ const Topping = styled.div`
   color: #9A9A9A;
 `;
 
+const Choices = styled.div`
+  padding-left: 10px;
+  margin-top: 0px;
+  width: 100%;
+  font-size: 14px;
+  color: #9A9A9A;
+`;
+
+
 export const OrderListItem = ({ order, index, deleteItem, setOpenItem }) => {
   const topping = order.topping.filter(item => item.checked)
     .map(item => item.name)
@@ -53,7 +62,10 @@ export const OrderListItem = ({ order, index, deleteItem, setOpenItem }) => {
   return (
     <>
       <OrderItemStyled onClick={(e) => e.target !== refDeleteButton.current && setOpenItem({...order, index})}>
-    <ItemName>{order.name} {order.choice}</ItemName>
+    <ItemName>
+      {order.name} 
+      <Choices>{order.choice}</Choices>
+    </ItemName>
     <span>{order.count}</span>
     <ItemPrice>{formatCurrency(totalPriceItems(order))}</ItemPrice>
         <BucketButton ref={refDeleteButton} onClick={() => deleteItem(index)}/>
