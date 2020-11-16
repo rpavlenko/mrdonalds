@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { ButtonCheckout } from '../Styled/ButtonCheckout';
 import { OrderListItem } from './OrderListItem';
 import { formatCurrency, totalPriceItems, projection } from '../Functions/secondaryFunction';
+import { Context } from '../Functions/context';
 
 const OrderStyled = styled.section`
   position: fixed;
@@ -17,10 +18,9 @@ const OrderStyled = styled.section`
   padding: 20px;
 `;
 
-const OrderTitle = styled.h2`
+export const OrderTitle = styled.h2`
   margin-bottom: 30px;
   text-align: center;
-  text-transform: uppercase;
 `;
 
 const OrderContent = styled.div`
@@ -31,7 +31,7 @@ const OrderList = styled.ul`
 
 `;
 
-const Total = styled.div`
+export const Total = styled.div`
   display: flex;
   margin: 0 35px 30px;
   & span:first-child {
@@ -40,7 +40,7 @@ const Total = styled.div`
 `;
 
 
-const TotalPrice = styled.span`
+export const TotalPrice = styled.span`
   text-align: right;
   min-width: 65px;
   margin-left: 20px;
@@ -51,28 +51,13 @@ const EmptyList = styled.p`
 `;
 
 
-const rulesData = {
-  itemName: ['name'],
-  price: ['price'],
-  count: ['count'],
-  topping: ['topping', arr => arr.filter(obj => obj.checked).map(obj => obj.name),
-    arr => arr.length ? arr : 'no topping'],
-  choice: ['choice', item => item ? item : 'no choices'],
-}
+export const Order = () => {
 
-
-export const Order = ({ orders, setOrders, setOpenItem, authentication, logIn, database }) => {
-
-  const sendOrder = () => {
-    const newOrder = orders.map(projection(rulesData));
-    database.ref('orders').push().set({
-      nameClient: authentication.displayName,
-      email: authentication.email,
-      order: newOrder,
-    });
-
-    setOrders([]);
-  }
+  const {
+    auth: { authentication, logIn },
+    orders: { orders, setOrders },
+    orderConfirm: { setOpenOrderConfirm },
+  } = useContext(Context);
 
   const total = orders.reduce((result, order) => 
   totalPriceItems(order) + result
@@ -92,7 +77,7 @@ export const Order = ({ orders, setOrders, setOpenItem, authentication, logIn, d
 
   return (
     <OrderStyled>
-      <OrderTitle>Ваш заказ:</OrderTitle>
+      <OrderTitle>ВАШ ЗАКАЗ:</OrderTitle>
       <OrderContent>
         { orders.length ? 
           <OrderList>
@@ -100,24 +85,28 @@ export const Order = ({ orders, setOrders, setOpenItem, authentication, logIn, d
               key={index}
               order={order}
               deleteItem={deleteItem}
-              index={index}
-              setOpenItem={setOpenItem}  
+              index={index} 
             />)}
           </OrderList> :
           <EmptyList>Список заказов пуст</EmptyList> }
       </OrderContent>
-      <Total>
-        <span>Итого</span>
-        <span>{totalItems}</span>
-        <TotalPrice>{formatCurrency(total)}</TotalPrice>
-      </Total>
-      <ButtonCheckout onClick={() => {
-        if(authentication) {
-          sendOrder();
-        } else {
-          logIn();
-        }
-      }}>Оформить</ButtonCheckout>
+      { orders.length ?
+        <>
+          <Total>
+            <span>Итого</span>
+            <span>{totalItems}</span>
+            <TotalPrice>{formatCurrency(total)}</TotalPrice>
+          </Total>
+          <ButtonCheckout onClick={() => {
+            if (authentication) {
+              setOpenOrderConfirm(true);
+            } else {
+              logIn();
+            }
+          }}>Оформить</ButtonCheckout>
+        </> :
+        null
+      }
     </OrderStyled>
   );
   

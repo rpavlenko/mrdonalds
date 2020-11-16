@@ -15,7 +15,7 @@ const Section = styled.section`
   padding: 30px;
 `;
 
-export const Menu = ({ setOpenItem, dbMenu }) => {
+export const Menu = ({ dbMenu }) => {
   // const res = useFetch();
 
   // const dbMenu = res.response;
@@ -29,7 +29,6 @@ export const Menu = ({ setOpenItem, dbMenu }) => {
           <h2>Бургеры</h2>
           <ListItem
             itemList={dbMenu.burger}
-            setOpenItem={setOpenItem}
           />
         </Section>
 
@@ -37,7 +36,6 @@ export const Menu = ({ setOpenItem, dbMenu }) => {
           <h2>Закуски / Напитки</h2>
           <ListItem
             itemList={dbMenu.other}
-            setOpenItem={setOpenItem}
           />
         </Section>
       </> : 

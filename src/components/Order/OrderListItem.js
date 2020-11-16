@@ -1,7 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useRef, useContext } from 'react';
 import styled from 'styled-components';
 import bucketImage from '../../image/bucket.svg';
 import { formatCurrency, totalPriceItems } from '../Functions/secondaryFunction';
+import { Context } from '../Functions/context';
 
 const ItemName = styled.span`
   flex-grow: 1;
@@ -52,7 +53,9 @@ const Choices = styled.div`
 `;
 
 
-export const OrderListItem = ({ order, index, deleteItem, setOpenItem }) => {
+export const OrderListItem = ({ order, index, deleteItem }) => {
+  const { openItem: { setOpenItem }} = useContext(Context);
+
   const topping = order.topping.filter(item => item.checked)
     .map(item => item.name)
     .join(', ');
