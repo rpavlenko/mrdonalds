@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from 'react';
+import { useRef, useContext } from 'react';
 import styled from 'styled-components';
 import bucketImage from '../../image/bucket.svg';
 import { formatCurrency, totalPriceItems } from '../Functions/secondaryFunction';
