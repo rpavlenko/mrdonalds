@@ -19,13 +19,13 @@ import { Context } from './components/Functions/context';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD2bhEhu2P3QfhlZEdNFUzAQWNGqtyps6A",
-  authDomain: "mrdonalds-f82bf.firebaseapp.com",
-  databaseURL: "https://mrdonalds-f82bf.firebaseio.com",
-  projectId: "mrdonalds-f82bf",
-  storageBucket: "mrdonalds-f82bf.appspot.com",
-  messagingSenderId: "499171320832",
-  appId: "1:499171320832:web:5fd1a8d454b2d421f664e5"
+  apiKey: "AIzaSyB01MvciW4vkR9w06TSh7PcwtygWXV1nsE",
+  authDomain: "mrdonalds-f83e9.firebaseapp.com",
+  databaseURL: "https://mrdonalds-f83e9.firebaseio.com",
+  projectId: "mrdonalds-f83e9",
+  storageBucket: "mrdonalds-f83e9.appspot.com",
+  messagingSenderId: "659286693271",
+  appId: "1:659286693271:web:bba92c89fd1c0a3fd0a0d2"
 };
 
 firebase.initializeApp(firebaseConfig);
