@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import styled from 'styled-components';
 import { ButtonCheckout } from '../Styled/ButtonCheckout';
 import { OrderListItem } from './OrderListItem';
-import { formatCurrency, totalPriceItems, projection } from '../Functions/secondaryFunction';
+import { formatCurrency, totalPriceItems } from '../Functions/secondaryFunction';
 import { Context } from '../Functions/context';
 
 const OrderStyled = styled.section`
@@ -59,16 +59,16 @@ export const Order = () => {
     orderConfirm: { setOpenOrderConfirm },
   } = useContext(Context);
 
-  const total = orders.reduce((result, order) => 
-  totalPriceItems(order) + result
-  , 0);
+  const total = orders.reduce((result, order) =>
+    totalPriceItems(order) + result
+    , 0);
 
   const deleteItem = (index) => {
     // const newOrders = [...orders];
     // newOrders.splice(index, 1);
 
     //using filter
-    const newOrders = orders.filter((item, i) => 
+    const newOrders = orders.filter((item, i) =>
       index !== i);
     setOrders(newOrders);
   }
@@ -79,16 +79,16 @@ export const Order = () => {
     <OrderStyled>
       <OrderTitle>ВАШ ЗАКАЗ:</OrderTitle>
       <OrderContent>
-        { orders.length ? 
+        {orders.length ?
           <OrderList>
-            {orders.map((order, index) => <OrderListItem 
+            {orders.map((order, index) => <OrderListItem
               key={index}
               order={order}
               deleteItem={deleteItem}
-              index={index} 
+              index={index}
             />)}
           </OrderList> :
-          <EmptyList>Список заказов пуст</EmptyList> }
+          <EmptyList>Список заказов пуст</EmptyList>}
       </OrderContent>
       { orders.length ?
         <>
@@ -109,5 +109,5 @@ export const Order = () => {
       }
     </OrderStyled>
   );
-  
+
 }

@@ -16,5 +16,5 @@ export const useFetch = () => {
     })();
   }, []);
 
-  return { response, error};
+  return { response, error };
 }

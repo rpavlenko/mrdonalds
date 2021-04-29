@@ -49,11 +49,11 @@ function App() {
     }}>
       <GlobalStyle />
       <NavBar />
-      <Order 
+      <Order
         database={database}
       />
-      <Menu dbMenu={dbMenu}/>
-      { openItem.openItem && <ModalItem /> }
+      <Menu dbMenu={dbMenu} />
+      { openItem.openItem && <ModalItem />}
       {orderConfirm.openOrderConfirm && <OrderConfirm />}
     </Context.Provider>
   );
