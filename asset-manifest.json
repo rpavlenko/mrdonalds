@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/burger/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/burger/static/js/main.02243811.chunk.js",
-    "main.js.map": "/burger/static/js/main.02243811.chunk.js.map",
-    "runtime-main.js": "/burger/static/js/runtime-main.3e6949f6.js",
-    "runtime-main.js.map": "/burger/static/js/runtime-main.3e6949f6.js.map",
-    "static/js/2.45b174c3.chunk.js": "/burger/static/js/2.45b174c3.chunk.js",
-    "static/js/2.45b174c3.chunk.js.map": "/burger/static/js/2.45b174c3.chunk.js.map",
-    "static/js/3.b77855cd.chunk.js": "/burger/static/js/3.b77855cd.chunk.js",
-    "static/js/3.b77855cd.chunk.js.map": "/burger/static/js/3.b77855cd.chunk.js.map",
-    "index.html": "/burger/index.html",
-    "static/css/main.6dea0f05.chunk.css.map": "/burger/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.45b174c3.chunk.js.LICENSE.txt": "/burger/static/js/2.45b174c3.chunk.js.LICENSE.txt",
-    "static/media/banner.9b6cf3ee.png": "/burger/static/media/banner.9b6cf3ee.png",
-    "static/media/bucket.08fdcf71.svg": "/burger/static/media/bucket.08fdcf71.svg",
-    "static/media/logo.03f3b0f4.svg": "/burger/static/media/logo.03f3b0f4.svg",
-    "static/media/sign.f318154e.svg": "/burger/static/media/sign.f318154e.svg"
+    "main.css": "/mrdonalds/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/mrdonalds/static/js/main.02243811.chunk.js",
+    "main.js.map": "/mrdonalds/static/js/main.02243811.chunk.js.map",
+    "runtime-main.js": "/mrdonalds/static/js/runtime-main.a5fb46c1.js",
+    "runtime-main.js.map": "/mrdonalds/static/js/runtime-main.a5fb46c1.js.map",
+    "static/js/2.e2711a39.chunk.js": "/mrdonalds/static/js/2.e2711a39.chunk.js",
+    "static/js/2.e2711a39.chunk.js.map": "/mrdonalds/static/js/2.e2711a39.chunk.js.map",
+    "static/js/3.b77855cd.chunk.js": "/mrdonalds/static/js/3.b77855cd.chunk.js",
+    "static/js/3.b77855cd.chunk.js.map": "/mrdonalds/static/js/3.b77855cd.chunk.js.map",
+    "index.html": "/mrdonalds/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/mrdonalds/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.e2711a39.chunk.js.LICENSE.txt": "/mrdonalds/static/js/2.e2711a39.chunk.js.LICENSE.txt",
+    "static/media/banner.9b6cf3ee.png": "/mrdonalds/static/media/banner.9b6cf3ee.png",
+    "static/media/bucket.08fdcf71.svg": "/mrdonalds/static/media/bucket.08fdcf71.svg",
+    "static/media/logo.03f3b0f4.svg": "/mrdonalds/static/media/logo.03f3b0f4.svg",
+    "static/media/sign.f318154e.svg": "/mrdonalds/static/media/sign.f318154e.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.3e6949f6.js",
-    "static/js/2.45b174c3.chunk.js",
+    "static/js/runtime-main.a5fb46c1.js",
+    "static/js/2.e2711a39.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
     "static/js/main.02243811.chunk.js"
   ]
